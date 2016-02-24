@@ -21,6 +21,7 @@ import java.sql.ResultSet;
 
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Map;
 import javax.swing.JOptionPane;
 
 /**
@@ -100,6 +101,17 @@ public class Database{
         }
         setning.close();
         return true;
+    }
+    
+    public String sok(String sokeString) throws Exception{
+        Statement setning = forbindelse.createStatement();
+        ResultSet resultat = setning.executeQuery(sokeString);
+        String returnString = "";
+        
+        while(resultat.next()){
+            returnString += resultat.getString("navn");
+        }
+        return returnString;
     }
 
 }
