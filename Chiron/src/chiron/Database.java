@@ -72,13 +72,10 @@ public class Database{
     public ArrayList sok(String sokeString) throws Exception{
         Statement setning = forbindelse.createStatement();
         ResultSet resultat = setning.executeQuery(sokeString);
-        String returnString = "";
-        //Data d;
         ArrayList a = new ArrayList(); 
         
         while(resultat.next()){
-            returnString += resultat.getString("navn");
-            Data d = new Data(resultat.getString(2),resultat.getString(3), resultat.getString(18), resultat.getString(7), resultat.getString(9), resultat.getDouble(10), resultat.getString(12), resultat.getString(13), resultat.getString(14), resultat.getString(16), resultat.getString(17));
+            Data d = new Data(resultat.getString(2),resultat.getString(3), resultat.getString(18), resultat.getString(4), resultat.getString(7), resultat.getString(9), resultat.getDouble(10), resultat.getString(12), resultat.getString(13), resultat.getString(14), resultat.getString(16), resultat.getString(17));
             a.add(d);
         }
         return a;

@@ -12,7 +12,8 @@ package Klasser;
 public class Data {
     String katnr;
     String casnr;
-    String fullkatnr; 
+    String fullkatnr;
+    String name;
     String batchnr; 
     String enhet;
     double mengde;
@@ -22,10 +23,11 @@ public class Data {
     String plassering;
     String kommentar;
     
-    public Data(String katnr, String casnr, String fullkatnr, String batchnr, String enhet, double mengde, String purity, String konsentrasjon, String testyear, String plassering, String kommentar){
+    public Data(String katnr, String casnr, String fullkatnr, String name, String batchnr, String enhet, double mengde, String purity, String konsentrasjon, String testyear, String plassering, String kommentar){
         this.katnr = katnr;
         this.casnr = casnr;
         this.fullkatnr = fullkatnr;
+        this.name = name;
         this.batchnr = batchnr;
         this.enhet = enhet;
         this.mengde = mengde;
@@ -59,6 +61,14 @@ public class Data {
     public void setFullkatnr(String fullkatnr) {
         this.fullkatnr = fullkatnr;
     }
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }    
 
     public String getBatchnr() {
         return batchnr;

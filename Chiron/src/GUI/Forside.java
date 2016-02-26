@@ -40,17 +40,18 @@ public class Forside extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,11 +77,9 @@ public class Forside extends javax.swing.JFrame {
 
         jLabel2.setText("CAT nr.");
 
-        jLabel3.setText("Batch nr.");
+        jLabel3.setText("Name");
 
-        jLabel4.setText("Name");
-
-        jLabel5.setText("jLabel5");
+        jLabel4.setText("Batch nr.");
 
         jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -88,11 +87,11 @@ public class Forside extends javax.swing.JFrame {
 
             },
             new String [] {
-                "CAT nr. ", "CAS nr.", "Full CAT nr.", "Batch nr.", "Unit", "Amount", "Purity", "Concentration", "Test Year", "Storage", "Comment"
+                "CAS nr.", "CAT nr. ", "Full CAT nr.", "Name", "Batch nr.", "Amount", "Unit", "Purity", "Concentration", "Test Year", "Storage", "Comment"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -100,8 +99,38 @@ public class Forside extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(100);
+            jTable1.getColumnModel().getColumn(0).setMaxWidth(500);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(80);
+            jTable1.getColumnModel().getColumn(1).setMaxWidth(80);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(140);
+            jTable1.getColumnModel().getColumn(2).setMaxWidth(500);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(3).setMaxWidth(500);
+            jTable1.getColumnModel().getColumn(4).setPreferredWidth(70);
+            jTable1.getColumnModel().getColumn(4).setMaxWidth(1000);
+            jTable1.getColumnModel().getColumn(5).setPreferredWidth(70);
+            jTable1.getColumnModel().getColumn(5).setMaxWidth(1000);
+            jTable1.getColumnModel().getColumn(6).setPreferredWidth(50);
+            jTable1.getColumnModel().getColumn(6).setMaxWidth(1000);
+            jTable1.getColumnModel().getColumn(7).setPreferredWidth(100);
+            jTable1.getColumnModel().getColumn(7).setMaxWidth(1000);
+            jTable1.getColumnModel().getColumn(8).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(8).setMaxWidth(1000);
+            jTable1.getColumnModel().getColumn(9).setPreferredWidth(100);
+            jTable1.getColumnModel().getColumn(9).setMaxWidth(1000);
+            jTable1.getColumnModel().getColumn(10).setPreferredWidth(100);
+            jTable1.getColumnModel().getColumn(10).setMaxWidth(1000);
+        }
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Pictures/chiron-logo.png"))); // NOI18N
+
+        jButton2.setText("Register new substance");
+
+        jButton3.setText("Register new batch");
+
+        jButton4.setText("Register new price");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,15 +139,27 @@ public class Forside extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1856, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(0, 22, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(22, 22, 22))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 724, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton2)
+                        .addComponent(jButton3)
+                        .addComponent(jButton4)))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
 
@@ -143,15 +184,11 @@ public class Forside extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1))))
+                                .addComponent(jButton1))
+                            .addComponent(jLabel4)))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(218, Short.MAX_VALUE))
         );
@@ -164,7 +201,6 @@ public class Forside extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
                         .addComponent(jLabel4)
-                        .addComponent(jLabel5)
                         .addComponent(jLabel3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -172,8 +208,7 @@ public class Forside extends javax.swing.JFrame {
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -201,13 +236,15 @@ public class Forside extends javax.swing.JFrame {
         SearchHandler searchhandler = new SearchHandler();
         ArrayList <Data> c;
         try{
-            c = searchhandler.testSok(jTextField2.getText().trim());
+            c = searchhandler.testSok(jTextField2.getText().trim(), jTextField1.getText().trim(), jTextField3.getText().trim(), jTextField4.getText().trim());
             DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
+            dtm.setRowCount(0);
             
             for(int i = 0; i<c.size(); i++){
                 String katnr = c.get(i).getKatnr();
                 String casnr = c.get(i).getCasnr();
                 String fullkatnr = c.get(i).getFullkatnr();
+                String name = c.get(i).getName();
                 String batchnr = c.get(i).getBatchnr();
                 String enhet = c.get(i).getEnhet();
                 double mengde = c.get(i).getMengde();
@@ -217,14 +254,14 @@ public class Forside extends javax.swing.JFrame {
                 String plassering = c.get(i).getPlassering();
                 String kommentar = c.get(i).getKommentar();
                 
-                Object[] data = {katnr, casnr, fullkatnr, batchnr, enhet, mengde, purity, konsentrasjon, testyear, plassering, kommentar};
+                Object[] data = {casnr, katnr, fullkatnr, name, batchnr, mengde, enhet, purity, konsentrasjon, testyear, plassering, kommentar};
                 dtm.addRow(data);
                         
             }
         }
         
         catch(Exception e){
-            
+            System.out.println("Feil");
         }
         
     }//GEN-LAST:event_jButton1MouseReleased
@@ -233,13 +270,15 @@ public class Forside extends javax.swing.JFrame {
         SearchHandler searchhandler = new SearchHandler();
         ArrayList <Data> c;
         try{
-            c = searchhandler.testSok(jTextField2.getText().trim());
+            c = searchhandler.testSok(jTextField2.getText().trim(), jTextField1.getText().trim(), jTextField3.getText().trim(), jTextField4.getText().trim());
             DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
+            dtm.setRowCount(0);
             
             for(int i = 0; i<c.size(); i++){
                 String katnr = c.get(i).getKatnr();
                 String casnr = c.get(i).getCasnr();
                 String fullkatnr = c.get(i).getFullkatnr();
+                String name = c.get(i).getName();
                 String batchnr = c.get(i).getBatchnr();
                 String enhet = c.get(i).getEnhet();
                 double mengde = c.get(i).getMengde();
@@ -249,14 +288,14 @@ public class Forside extends javax.swing.JFrame {
                 String plassering = c.get(i).getPlassering();
                 String kommentar = c.get(i).getKommentar();
                 
-                Object[] data = {katnr, casnr, fullkatnr, batchnr, enhet, mengde, purity, konsentrasjon, testyear, plassering, kommentar};
+                Object[] data = {casnr, katnr, fullkatnr, name, batchnr, mengde, enhet, purity, konsentrasjon, testyear, plassering, kommentar};
                 dtm.addRow(data);
                         
             }
         }
         
         catch(Exception e){
-            
+            System.out.println("Feil");
         }
     }//GEN-LAST:event_jTextField2FocusLost
     
@@ -297,11 +336,13 @@ public class Forside extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -311,6 +352,5 @@ public class Forside extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
