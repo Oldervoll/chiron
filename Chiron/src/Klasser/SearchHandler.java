@@ -6,18 +6,26 @@
 package Klasser;
 
 import chiron.Database;
+import java.util.ArrayList;
 /**
  *
  * @author Sondre
  */
 public class SearchHandler {
     
-    public String testSok(String nr) throws Exception {
+    public ArrayList testSok(String nr) throws Exception {
         Database db = new Database();
+        String sok =  "Select * from produkt,batch,salgsvare where produkt.kat_nr = '"+nr+"' and  batch.FULL_KAT like '%"+nr+"%' and salgsvare.FULL_KAT like '%"+nr+"%'";
         
-        String sok = "Select * from produkt, salgsvare, batch where produkt.kat_nr = '"+nr+"'";
+        ArrayList b = db.sok(sok);
         
-        return db.sok(sok);
+        for(int i = 0; i<b.size(); i++){
+            System.out.println(b.get(i));
+        }
+        
+        return b;
+        
+        
     }
     
 }
